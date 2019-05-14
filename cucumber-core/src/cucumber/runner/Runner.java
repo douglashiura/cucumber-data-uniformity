@@ -45,7 +45,6 @@ public final class Runner {
 
     public void runPickle(PickleEvent pickle) {
         buildBackendWorlds(); // Java8 step definitions will be added to the glue here
-        System.out.println("Runner.runPickle()");
         TestCase testCase = createTestCaseForPickle(pickle);
         testCase.run(bus);
         disposeBackendWorlds();

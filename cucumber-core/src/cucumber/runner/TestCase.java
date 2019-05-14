@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.ufsc.leb.DataUniformity;
 import cucumber.api.Result;
 import cucumber.api.TestStep;
 import cucumber.api.event.TestCaseFinished;
@@ -26,11 +27,10 @@ final class TestCase implements cucumber.api.TestCase {
 		this.afterHooks = afterHooks;
 		this.pickleEvent = pickleEvent;
 		this.dryRun = dryRun;
-
+		DataUniformity.get().putFeatureOnStream(pickleEvent.uri);
 		testSteps.forEach((PickleStepTestStep step) -> {
-			step.getDefinitionArgument().forEach(arg ->{
-				System.out.println(arg.getValue());
-				
+			step.getDefinitionArgument().forEach(arg -> {
+				DataUniformity.get().addDataOnStream(arg.getValue());
 			});
 		});
 	}
