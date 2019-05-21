@@ -1,6 +1,7 @@
 package br.ufsc.leb;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DataUniformity {
@@ -70,10 +71,7 @@ public class DataUniformity {
 		public Pair(Feature a, Feature b) {
 			this.a = a;
 			this.b = b;
-			uniformidadeQuantitativa = 0;
-			a.getTestData().forEach((data) -> {
-				uniformidadeQuantitativa = contem(b, data) ? ++uniformidadeQuantitativa : uniformidadeQuantitativa;
-			});
+			uniformidadeQuantitativa = (int) a.getTestData().stream().filter(data -> contem(b, data)).count();
 			if (a.getTestData().size() > 0) {
 				uniformidade = (float) uniformidadeQuantitativa / a.getTestData().size();
 			} else {

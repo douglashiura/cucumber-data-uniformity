@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="cucumber-expressions-6.2.2.jar"/>
+	<classpathentry kind="lib" path="cucumber-html-0.2.7.jar"/>
+	<classpathentry kind="lib" path="cucumber-java-4.3.1.jar"/>
+	<classpathentry kind="lib" path="datatable-1.1.12.jar"/>
+	<classpathentry kind="lib" path="datatable-dependencies-1.1.12.jar"/>
+	<classpathentry kind="lib" path="gherkin-5.1.0.jar"/>
+	<classpathentry kind="lib" path="tag-expressions-1.1.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/cucumber-core"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
