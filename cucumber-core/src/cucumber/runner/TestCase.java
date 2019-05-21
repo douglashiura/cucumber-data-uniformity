@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufsc.leb.DataUniformity;
+import br.ufsc.leb.Patterns;
 import cucumber.api.Result;
 import cucumber.api.TestStep;
 import cucumber.api.event.TestCaseFinished;
@@ -29,9 +30,14 @@ final class TestCase implements cucumber.api.TestCase {
 		this.dryRun = dryRun;
 		DataUniformity.get().putFeatureOnStream(pickleEvent.uri);
 		testSteps.forEach((PickleStepTestStep step) -> {
-			step.getDefinitionArgument().forEach(arg -> {
-				DataUniformity.get().addDataOnStream(arg.getValue());
-			});
+			if (step.getDefinitionArgument().isEmpty()) {
+				Patterns.getArguments(step.getStepText())
+						.forEach(argument -> DataUniformity.get().addDataOnStream(argument));
+			} else {
+				step.getDefinitionArgument().forEach(arg -> {
+					DataUniformity.get().addDataOnStream(arg.getValue());
+				});
+			}
 		});
 	}
 
