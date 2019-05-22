@@ -1,7 +1,8 @@
 package br.ufsc.leb;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class DataUniformity {
@@ -48,18 +49,23 @@ public class DataUniformity {
 		return pairs;
 	}
 
-	public void out() {
-		System.out.println("Feature (a)	(b)	RelativeUniformity 	Uniforme	Non-uniforme");
+	public void out() throws IOException {
+		FileOutputStream file = new FileOutputStream("uniformity.txt");
+		file.write(("Feature (a)	(b)	RelativeUniformity 	Uniforme	Non-uniforme\n").getBytes());
 		for (Pair pair : getUniformity()) {
-			System.out.println(pair.a.getUri() + "	" + pair.b.getUri() + "	" + pair.uniformidade + "	"
+			file.write((pair.a.getUri() + "	" + pair.b.getUri() + "	" + pair.uniformidade + "	"
 					+ pair.uniformidadeQuantitativa + "	"
-					+ (pair.a.getTestData().size() - pair.uniformidadeQuantitativa));
+					+ (pair.a.getTestData().size() - pair.uniformidadeQuantitativa) + "\n").getBytes());
 		}
-		System.out.println("\nFeature	elements");
+		file.write(("\nFeature	elements\n").getBytes());
 		features.forEach(feature -> {
-			System.out.println(feature.getUri() + "	" + feature.getTestData().size());
+			try {
+				file.write((feature.getUri() + "	" + feature.getTestData().size() + "\n").getBytes());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		});
-
+		file.close();
 	}
 
 	class Pair {
