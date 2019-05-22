@@ -1,187 +1,141 @@
 <?php
 
-use Behat\Behat\Context\Context;
-use Behat\Behat\Hook\Scope\AfterScenarioScope;
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Behat\Tester\Exception\PendingException;
-use Behat\Testwork\Hook\Scope\BeforeSuiteScope;
-use Drupal\DrupalExtension\Context\RawDrupalContext;
-use Drupal\DrupalExtension\Context\MinkContext;
+use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 
-
-require_once 'PHPUnit/Autoload.php';
-require_once 'PHPUnit/Framework/Assert/Functions.php';
+use Canciella\Journal;
 
 /**
- * Features context.
+ * Defines application features from the specific context.
  */
-class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
+class FeatureContext implements Context, SnippetAcceptingContext
+{
 
-  /**
-   * Initializes context.
-   *
-   * Every scenario gets its own context instance.
-   * You can also pass arbitrary arguments to the
-   * context constructor through behat.yml.
-   */
-  public function __construct() {
-  }
+    private $base_url;
+    private $output;
+    private $session;
 
-  /**
-   * @BeforeSuite
-   */
-  public static function prepare(BeforeSuiteScope $scope) {
-    /*
-     * Kludge!
-     * see https://www.drupal.org/node/2023625#comment-8607207
-     * [ST 2014/10/27]
+    /**
+     * Initializes context.
+     *
+     * Every scenario gets its own context instance.
+     * You can also pass arbitrary arguments to the
+     * context constructor through behat.yml.
      */
-    variable_set('admin_menu_cache_client', FALSE);
-  }
-
-  /**
-   * @Given /^I am on the home page$/
-   */
-  public function iAmOnTheHomePage() {
-    $this->assertHomepage();
-  }
-
-  /**
-   * @Then /^I should see the admin menu$/
-   */
-  public function iShouldSeeTheAdminMenu() {
-    $regionObj = $this->getRegion("Admin Menu");
-    assertTrue($regionObj->isVisible());
-  }
-
-  /**
-   * @Given /^I resize the window to "(\d+)" by "(\d+)"$/
-   */
-  public function iResizeWindow($width, $height) {
-    $this->getSession()->resizeWindow((int) $width, (int) $height);
-  }
-
-  /**
-   * @Then /^I should see the "([^"]*)" region$/
-   */
-  public function iShouldSeeTheRegion($region) {
-    $regionObj = $this->getRegion($region);
-    if (!$regionObj->isVisible()) {
-      throw new \Exception(sprintf('Region "%s" on the page %s is not visible.', $region, $this->getSession()
-            ->getCurrentUrl()));
-    }
-  }
-
-  /**
-   * @Given /^I should not see the "([^"]*)" region$/
-   */
-  public function iShouldNotSeeTheRegion($region) {
-    $regionObj = $this->getRegion($region);
-    if ($regionObj->isVisible()) {
-      throw new \Exception(sprintf('Region "%s" on the page %s is visible.', $region, $this->getSession()
-            ->getCurrentUrl()));
-    }
-  }
-
-  /**
-   * @Given /^I should see the mobile navigation hamburger$/
-   */
-  public function iShouldSeeTheMobileNavigationHamburger() {
-    $elem = $this->getSession()->getPage()->find('css', '#mobile-link');
-    if (! $elem->isVisible()) {
-      throw new \Exception(sprintf('Mobile navigation hamburger on the page %s is not visible.',
-        $this->getSession()->getCurrentUrl()));
-    }
-  }
-
-  /**
-   * @Given /^I should see today\'s date formatted like "([^"]*)" in the "([^"]*)" region$/
-   */
-  public function iShouldSeeTodaySDateInTheRegion($date_format, $region) {
-    $text = date($date_format);
-    $regionObj = $this->getRegion($region);
-
-    // Find the text within the region
-    $regionText = $regionObj->getText();
-    if (strpos($regionText, $text) === FALSE) {
-      throw new \Exception(sprintf("The text '%s' was not found in the region '%s' on the page %s", $text, $region, $this->getSession()->getCurrentUrl()));
-    }
-  }
-
-  /**
-   * @Then /^I should see a slideshow in the "([^"]*)" region$/
-   */
-  public function iShouldSeeASlideshowInTheRegion($region) {
-    $regionObj = $this->getRegion($region);
-    $elem = $regionObj->find('css', '.flexslider');
-    if (! $elem) {
-      throw new \Exception(sprintf('No slideshow found in "%s" region',
-        $region));
-    }
-  }
-
-  /**
-   * Return a region from the current page.
-   *
-   * @throws \Exception
-   *   If region cannot be found.
-   *
-   * @param string $region
-   *   The machine name of the region to return.
-   *
-   * @return \Behat\Mink\Element\NodeElement
-   *
-   * @see \Drupal\DrupalExtension\Context\MinkContext::getRegion()
-   *
-   * Copied verbatim from the MinkContext's method b/c there's no way to call it anymore.
-   * @link https://www.drupal.org/node/2370729#comment-9320477
-   */
-  public function getRegion($region) {
-    $session = $this->getSession();
-    $regionObj = $session->getPage()->find('region', $region);
-    if (!$regionObj) {
-      throw new \Exception(sprintf('No region "%s" found on the page %s.', $region, $session->getCurrentUrl()));
+    public function __construct()
+    {
+        include __DIR__ . '/../../src/config.php';
+        $this->base_url = "$base_domain/go/";
     }
 
-    return $regionObj;
-  }
+    /**
+     * @When navego a la revista :arg1 a través del proxy
+     */
+    public function navegoALaRevistaATravesDelProxy($arg1)
+    {
+        $j = Journal::getJournalByName($arg1);
+        $uri = $j->website;
+        
+        $p = new \Canciella\Controllers\Proxy();
+        $this->output = $p->processUri($uri, $this->base_url)[0]; 
+    }
 
-  /**
-   * @AfterScenario @mobile
-   * KLUDGE!
-   * After running scenarios tagged as 'mobile', resize the browser to 'full screen' width/height.
-   * [ST 2015/12/30]
-   */
-  public function resizeWindowToFullScreen(AfterScenarioScope $scope)
-  {
-    $this->iResizeWindow(1366, 768);
-  }
+    /**
+     * @Then todos los enlaces devueltos acceden a traves del proxy
+     */
+    public function todosLosEnlacesDevueltosAccedenATravesDelProxy()
+    {
+       $proxy = new \Canciella\Controllers\Proxy();
+       $proxy->initDOM($this->output);
+       $proxy->linkableElements_walk(
+           function($element, $attribute_name, $attribute) {
+               if (!empty($attribute) && strpos($attribute, $this->base_url) !== 0) {
+                   throw new Exception("Proxy not used in element {$element->C14N()}");
+               }
+           }
+       );
+    }
 
-  /**
-   * @BeforeScenario @mobile
-   * KLUDGE!
-   * Before running scenarios tagged as 'mobile', resize the browser to 'mobile' width/height.
-   * [ST 2015/12/30]
-   */
-  public function resizeWindowToMobile(BeforeScenarioScope $scope)
-  {
-    $this->iResizeWindow(200, 600);
-  }
+    /**
+     * @Given que la revista :arg1 tiene un artículo :arg2
+     */
+    public function queLaRevistaTieneUnArticulo($arg1, $arg2)
+    {
+        throw new PendingException();
+    }
 
+    /**
+     * @When pongo :arg1 en el cajón Buscar
+     */
+    public function pongoEnElCajonBuscar($arg1)
+    {
+        throw new PendingException();
+    }
 
-  /**
-   * @Then /^I wait for the browser to complete$/
-   *
-   * KLUDGE! - trying to delay the script to get things to complete all the time.
-   * [EG 2015/01/04]
-   */
-  public function iWaitForBrowserComplete()
-  {
-    $this->getSession()->wait(1000,'');
-  }
+    /**
+     * @When hago clic en primer enlace del resultado
+     */
+    public function hagoClicEnPrimerEnlaceDelResultado()
+    {
+        throw new PendingException();
+    }
 
+    /**
+     * @Then obtengo un artículo en formato pdf
+     */
+    public function obtengoUnArticuloEnFormatoPdf()
+    {
+        $content_type = $this->session->getresponseheaders()['Content-Type'][0];
+        if ($content_type !== 'application/pdf') { 
+            throw new exception("el artículo '$arg2' de la revista '$arg1' no es accesible a través del proxy.");
+        }
+    }
 
+    /**
+     * @When navego a la revista '' a través del proxy
+     */
+    public function navegoALaRevistaATravesDelProxy2()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given que la revista '' tiene un artículo :arg1
+     */
+    public function queLaRevistaTieneUnArticulo2($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When pongo :arg1 en el cajón Buscar de la revista Springer :arg2
+     */
+    public function pongoEnElCajonBuscarDeLaRevistaSpringer($arg1, $arg2)
+    {
+        $driver = new \Behat\Mink\Driver\GoutteDriver();
+        $this->session = new \Behat\Mink\Session($driver);
+        $this->session->start();
+
+        $journal_Springer = Journal::getJournalByName($arg2);
+        $this->session->visit("$this->base_url$journal_Springer->website");
+        $front_page = $this->session->getPage();
+        $search_within = $front_page->find('css', 'form.searchWithinForm input.search-within');
+        $search_within_button = $front_page->find('css', 'form.searchWithinForm input.search-submit');
+        $search_within->setValue($arg1);
+        $search_within_button->click();
+    }
+
+    /**
+     * @When hago clic en primer enlace del resultado de busqueda en revista Springer
+     */
+    public function hagoClicEnPrimerEnlaceDelResultadoDeBusquedaEnRevistaSpringer()
+    {
+        $search_result_page = $this->session->getPage();
+        $article_link = $search_result_page->find('css', 'ol#results-list li h2 a');
+        $pdf_link = $search_result_page->find('css', 'ol#results-list li div.actions span a.pdf-link');
+        $pdf_link->click();
+    }
 }
