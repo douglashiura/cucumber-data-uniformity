@@ -1,67 +1,84 @@
 Feature (a)	(b)	RelativeUniformity 	Uniforme	Non-uniforme
-file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/04-apps.feature	0.25287357	22	65
-file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/05-closingSessions.feature	0.12643678	11	76
-file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/06-deletingUser.feature	0.08045977	7	80
-file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/07-updatePassword.feature	0.10344828	9	78
-file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/08-deletingApps.feature	0.16091955	14	73
-file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.12643678	11	76
-file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/10-validation.feature	0.10344828	9	78
-file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/01-authentication.feature	0.21978022	20	71
-file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/05-closingSessions.feature	0.20879121	19	72
-file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/06-deletingUser.feature	0.10989011	10	81
-file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/07-updatePassword.feature	0.0989011	9	82
-file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/08-deletingApps.feature	0.51648355	47	44
-file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.24175824	22	69
-file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/10-validation.feature	0.18681319	17	74
-file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/01-authentication.feature	0.17307693	9	43
-file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/04-apps.feature	0.61538464	32	20
-file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/06-deletingUser.feature	0.44230768	23	29
-file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/07-updatePassword.feature	0.44230768	23	29
-file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/08-deletingApps.feature	0.17307693	9	43
-file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.63461536	33	19
-file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/10-validation.feature	0.5769231	30	22
-file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/01-authentication.feature	0.14285715	2	12
-file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/04-apps.feature	0.5	7	7
-file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/05-closingSessions.feature	0.5714286	8	6
-file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/07-updatePassword.feature	0.5714286	8	6
-file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/08-deletingApps.feature	0.2857143	4	10
-file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.42857143	6	8
-file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/10-validation.feature	0.5	7	7
-file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/01-authentication.feature	0.20833333	5	19
-file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/04-apps.feature	0.5	12	12
-file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/05-closingSessions.feature	0.5833333	14	10
-file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/06-deletingUser.feature	0.5833333	14	10
-file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/08-deletingApps.feature	0.125	3	21
-file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.5833333	14	10
-file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/10-validation.feature	0.5416667	13	11
-file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/01-authentication.feature	0.22222222	8	28
-file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/04-apps.feature	0.3888889	14	22
-file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/05-closingSessions.feature	0.1388889	5	31
-file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/06-deletingUser.feature	0.16666667	6	30
-file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/07-updatePassword.feature	0.083333336	3	33
-file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.11111111	4	32
-file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/10-validation.feature	0.083333336	3	33
-file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/01-authentication.feature	0.15966387	19	100
-file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/04-apps.feature	0.6134454	73	46
-file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/05-closingSessions.feature	0.46218488	55	64
-file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/06-deletingUser.feature	0.40336135	48	71
-file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/07-updatePassword.feature	0.42016807	50	69
-file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/08-deletingApps.feature	0.26050422	31	88
-file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/10-validation.feature	0.79831934	95	24
-file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/01-authentication.feature	0.08510638	8	86
-file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/04-apps.feature	0.4787234	45	49
-file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/05-closingSessions.feature	0.38297874	36	58
-file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/06-deletingUser.feature	0.34042552	32	62
-file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/07-updatePassword.feature	0.34042552	32	62
-file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/08-deletingApps.feature	0.15957446	15	79
-file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.65957445	62	32
+file:resources/features/AssertSteps.feature	file:resources/features/ClickSteps.feature	0.03448276	2	56
+file:resources/features/AssertSteps.feature	file:resources/features/ConfigStep.feature	0.01724138	1	57
+file:resources/features/AssertSteps.feature	file:resources/features/InputSteps.feature	0.0862069	5	53
+file:resources/features/AssertSteps.feature	file:resources/features/featuretest.feature	0.01724138	1	57
+file:resources/features/AssertSteps.feature	file:resources/features/javaScriptSteps.feature	0.03448276	2	56
+file:resources/features/AssertSteps.feature	file:resources/features/navigationSteps.feature	0.06896552	4	54
+file:resources/features/AssertSteps.feature	file:resources/features/progressSteps.feature	0.05172414	3	55
+file:resources/features/AssertSteps.feature	file:resources/features/screenshotfeature.feature	0.01724138	1	57
+file:resources/features/ClickSteps.feature	file:resources/features/AssertSteps.feature	0.2	2	8
+file:resources/features/ClickSteps.feature	file:resources/features/ConfigStep.feature	0.1	1	9
+file:resources/features/ClickSteps.feature	file:resources/features/InputSteps.feature	0.2	2	8
+file:resources/features/ClickSteps.feature	file:resources/features/featuretest.feature	0.1	1	9
+file:resources/features/ClickSteps.feature	file:resources/features/javaScriptSteps.feature	0.1	1	9
+file:resources/features/ClickSteps.feature	file:resources/features/navigationSteps.feature	0.4	4	6
+file:resources/features/ClickSteps.feature	file:resources/features/progressSteps.feature	0.1	1	9
+file:resources/features/ClickSteps.feature	file:resources/features/screenshotfeature.feature	0.1	1	9
+file:resources/features/ConfigStep.feature	file:resources/features/AssertSteps.feature	1.0	1	0
+file:resources/features/ConfigStep.feature	file:resources/features/ClickSteps.feature	1.0	1	0
+file:resources/features/ConfigStep.feature	file:resources/features/InputSteps.feature	1.0	1	0
+file:resources/features/ConfigStep.feature	file:resources/features/featuretest.feature	1.0	1	0
+file:resources/features/ConfigStep.feature	file:resources/features/javaScriptSteps.feature	1.0	1	0
+file:resources/features/ConfigStep.feature	file:resources/features/navigationSteps.feature	1.0	1	0
+file:resources/features/ConfigStep.feature	file:resources/features/progressSteps.feature	1.0	1	0
+file:resources/features/ConfigStep.feature	file:resources/features/screenshotfeature.feature	1.0	1	0
+file:resources/features/InputSteps.feature	file:resources/features/AssertSteps.feature	0.14634146	6	35
+file:resources/features/InputSteps.feature	file:resources/features/ClickSteps.feature	0.048780486	2	39
+file:resources/features/InputSteps.feature	file:resources/features/ConfigStep.feature	0.024390243	1	40
+file:resources/features/InputSteps.feature	file:resources/features/featuretest.feature	0.024390243	1	40
+file:resources/features/InputSteps.feature	file:resources/features/javaScriptSteps.feature	0.024390243	1	40
+file:resources/features/InputSteps.feature	file:resources/features/navigationSteps.feature	0.024390243	1	40
+file:resources/features/InputSteps.feature	file:resources/features/progressSteps.feature	0.024390243	1	40
+file:resources/features/InputSteps.feature	file:resources/features/screenshotfeature.feature	0.024390243	1	40
+file:resources/features/featuretest.feature	file:resources/features/AssertSteps.feature	1.0	1	0
+file:resources/features/featuretest.feature	file:resources/features/ClickSteps.feature	1.0	1	0
+file:resources/features/featuretest.feature	file:resources/features/ConfigStep.feature	1.0	1	0
+file:resources/features/featuretest.feature	file:resources/features/InputSteps.feature	1.0	1	0
+file:resources/features/featuretest.feature	file:resources/features/javaScriptSteps.feature	1.0	1	0
+file:resources/features/featuretest.feature	file:resources/features/navigationSteps.feature	1.0	1	0
+file:resources/features/featuretest.feature	file:resources/features/progressSteps.feature	1.0	1	0
+file:resources/features/featuretest.feature	file:resources/features/screenshotfeature.feature	1.0	1	0
+file:resources/features/javaScriptSteps.feature	file:resources/features/AssertSteps.feature	0.6	3	2
+file:resources/features/javaScriptSteps.feature	file:resources/features/ClickSteps.feature	0.2	1	4
+file:resources/features/javaScriptSteps.feature	file:resources/features/ConfigStep.feature	0.2	1	4
+file:resources/features/javaScriptSteps.feature	file:resources/features/InputSteps.feature	0.2	1	4
+file:resources/features/javaScriptSteps.feature	file:resources/features/featuretest.feature	0.2	1	4
+file:resources/features/javaScriptSteps.feature	file:resources/features/navigationSteps.feature	0.2	1	4
+file:resources/features/javaScriptSteps.feature	file:resources/features/progressSteps.feature	0.2	1	4
+file:resources/features/javaScriptSteps.feature	file:resources/features/screenshotfeature.feature	0.2	1	4
+file:resources/features/navigationSteps.feature	file:resources/features/AssertSteps.feature	0.24	6	19
+file:resources/features/navigationSteps.feature	file:resources/features/ClickSteps.feature	0.24	6	19
+file:resources/features/navigationSteps.feature	file:resources/features/ConfigStep.feature	0.04	1	24
+file:resources/features/navigationSteps.feature	file:resources/features/InputSteps.feature	0.04	1	24
+file:resources/features/navigationSteps.feature	file:resources/features/featuretest.feature	0.04	1	24
+file:resources/features/navigationSteps.feature	file:resources/features/javaScriptSteps.feature	0.04	1	24
+file:resources/features/navigationSteps.feature	file:resources/features/progressSteps.feature	0.04	1	24
+file:resources/features/navigationSteps.feature	file:resources/features/screenshotfeature.feature	0.04	1	24
+file:resources/features/progressSteps.feature	file:resources/features/AssertSteps.feature	0.5714286	4	3
+file:resources/features/progressSteps.feature	file:resources/features/ClickSteps.feature	0.14285715	1	6
+file:resources/features/progressSteps.feature	file:resources/features/ConfigStep.feature	0.14285715	1	6
+file:resources/features/progressSteps.feature	file:resources/features/InputSteps.feature	0.14285715	1	6
+file:resources/features/progressSteps.feature	file:resources/features/featuretest.feature	0.14285715	1	6
+file:resources/features/progressSteps.feature	file:resources/features/javaScriptSteps.feature	0.14285715	1	6
+file:resources/features/progressSteps.feature	file:resources/features/navigationSteps.feature	0.14285715	1	6
+file:resources/features/progressSteps.feature	file:resources/features/screenshotfeature.feature	0.14285715	1	6
+file:resources/features/screenshotfeature.feature	file:resources/features/AssertSteps.feature	1.0	1	0
+file:resources/features/screenshotfeature.feature	file:resources/features/ClickSteps.feature	1.0	1	0
+file:resources/features/screenshotfeature.feature	file:resources/features/ConfigStep.feature	1.0	1	0
+file:resources/features/screenshotfeature.feature	file:resources/features/InputSteps.feature	1.0	1	0
+file:resources/features/screenshotfeature.feature	file:resources/features/featuretest.feature	1.0	1	0
+file:resources/features/screenshotfeature.feature	file:resources/features/javaScriptSteps.feature	1.0	1	0
+file:resources/features/screenshotfeature.feature	file:resources/features/navigationSteps.feature	1.0	1	0
+file:resources/features/screenshotfeature.feature	file:resources/features/progressSteps.feature	1.0	1	0
 
 Feature	elements
-file:resources/cucumber-features/01-authentication.feature	87
-file:resources/cucumber-features/04-apps.feature	91
-file:resources/cucumber-features/05-closingSessions.feature	52
-file:resources/cucumber-features/06-deletingUser.feature	14
-file:resources/cucumber-features/07-updatePassword.feature	24
-file:resources/cucumber-features/08-deletingApps.feature	36
-file:resources/cucumber-features/09-resettingPassword.feature	119
-file:resources/cucumber-features/10-validation.feature	94
+file:resources/features/AssertSteps.feature	58
+file:resources/features/ClickSteps.feature	10
+file:resources/features/ConfigStep.feature	1
+file:resources/features/InputSteps.feature	41
+file:resources/features/featuretest.feature	1
+file:resources/features/javaScriptSteps.feature	5
+file:resources/features/navigationSteps.feature	25
+file:resources/features/progressSteps.feature	7
+file:resources/features/screenshotfeature.feature	1
