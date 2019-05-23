@@ -1,28 +1,67 @@
 Feature (a)	(b)	RelativeUniformity 	Uniforme	Non-uniforme
-file:resources/features/Pages.feature	file:resources/features/authorization.feature	0.07692308	6	72
-file:resources/features/Pages.feature	file:resources/features/registration.feature	0.14102565	11	67
-file:resources/features/Pages.feature	file:resources/features/viewfeed.feature	0.0	0	78
-file:resources/features/Pages.feature	file:resources/features/viewsinglefeed.feature	0.0	0	78
-file:resources/features/authorization.feature	file:resources/features/Pages.feature	0.4	16	24
-file:resources/features/authorization.feature	file:resources/features/registration.feature	0.05	2	38
-file:resources/features/authorization.feature	file:resources/features/viewfeed.feature	0.0	0	40
-file:resources/features/authorization.feature	file:resources/features/viewsinglefeed.feature	0.0	0	40
-file:resources/features/registration.feature	file:resources/features/Pages.feature	0.39325842	35	54
-file:resources/features/registration.feature	file:resources/features/authorization.feature	0.011235955	1	88
-file:resources/features/registration.feature	file:resources/features/viewfeed.feature	0.0	0	89
-file:resources/features/registration.feature	file:resources/features/viewsinglefeed.feature	0.0	0	89
-file:resources/features/viewfeed.feature	file:resources/features/Pages.feature	1.0	0	0
-file:resources/features/viewfeed.feature	file:resources/features/authorization.feature	1.0	0	0
-file:resources/features/viewfeed.feature	file:resources/features/registration.feature	1.0	0	0
-file:resources/features/viewfeed.feature	file:resources/features/viewsinglefeed.feature	1.0	0	0
-file:resources/features/viewsinglefeed.feature	file:resources/features/Pages.feature	1.0	0	0
-file:resources/features/viewsinglefeed.feature	file:resources/features/authorization.feature	1.0	0	0
-file:resources/features/viewsinglefeed.feature	file:resources/features/registration.feature	1.0	0	0
-file:resources/features/viewsinglefeed.feature	file:resources/features/viewfeed.feature	1.0	0	0
+file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/04-apps.feature	0.25287357	22	65
+file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/05-closingSessions.feature	0.12643678	11	76
+file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/06-deletingUser.feature	0.08045977	7	80
+file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/07-updatePassword.feature	0.10344828	9	78
+file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/08-deletingApps.feature	0.16091955	14	73
+file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.12643678	11	76
+file:resources/cucumber-features/01-authentication.feature	file:resources/cucumber-features/10-validation.feature	0.10344828	9	78
+file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/01-authentication.feature	0.21978022	20	71
+file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/05-closingSessions.feature	0.20879121	19	72
+file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/06-deletingUser.feature	0.10989011	10	81
+file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/07-updatePassword.feature	0.0989011	9	82
+file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/08-deletingApps.feature	0.51648355	47	44
+file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.24175824	22	69
+file:resources/cucumber-features/04-apps.feature	file:resources/cucumber-features/10-validation.feature	0.18681319	17	74
+file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/01-authentication.feature	0.17307693	9	43
+file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/04-apps.feature	0.61538464	32	20
+file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/06-deletingUser.feature	0.44230768	23	29
+file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/07-updatePassword.feature	0.44230768	23	29
+file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/08-deletingApps.feature	0.17307693	9	43
+file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.63461536	33	19
+file:resources/cucumber-features/05-closingSessions.feature	file:resources/cucumber-features/10-validation.feature	0.5769231	30	22
+file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/01-authentication.feature	0.14285715	2	12
+file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/04-apps.feature	0.5	7	7
+file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/05-closingSessions.feature	0.5714286	8	6
+file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/07-updatePassword.feature	0.5714286	8	6
+file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/08-deletingApps.feature	0.2857143	4	10
+file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.42857143	6	8
+file:resources/cucumber-features/06-deletingUser.feature	file:resources/cucumber-features/10-validation.feature	0.5	7	7
+file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/01-authentication.feature	0.20833333	5	19
+file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/04-apps.feature	0.5	12	12
+file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/05-closingSessions.feature	0.5833333	14	10
+file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/06-deletingUser.feature	0.5833333	14	10
+file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/08-deletingApps.feature	0.125	3	21
+file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.5833333	14	10
+file:resources/cucumber-features/07-updatePassword.feature	file:resources/cucumber-features/10-validation.feature	0.5416667	13	11
+file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/01-authentication.feature	0.22222222	8	28
+file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/04-apps.feature	0.3888889	14	22
+file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/05-closingSessions.feature	0.1388889	5	31
+file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/06-deletingUser.feature	0.16666667	6	30
+file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/07-updatePassword.feature	0.083333336	3	33
+file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.11111111	4	32
+file:resources/cucumber-features/08-deletingApps.feature	file:resources/cucumber-features/10-validation.feature	0.083333336	3	33
+file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/01-authentication.feature	0.15966387	19	100
+file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/04-apps.feature	0.6134454	73	46
+file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/05-closingSessions.feature	0.46218488	55	64
+file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/06-deletingUser.feature	0.40336135	48	71
+file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/07-updatePassword.feature	0.42016807	50	69
+file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/08-deletingApps.feature	0.26050422	31	88
+file:resources/cucumber-features/09-resettingPassword.feature	file:resources/cucumber-features/10-validation.feature	0.79831934	95	24
+file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/01-authentication.feature	0.08510638	8	86
+file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/04-apps.feature	0.4787234	45	49
+file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/05-closingSessions.feature	0.38297874	36	58
+file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/06-deletingUser.feature	0.34042552	32	62
+file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/07-updatePassword.feature	0.34042552	32	62
+file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/08-deletingApps.feature	0.15957446	15	79
+file:resources/cucumber-features/10-validation.feature	file:resources/cucumber-features/09-resettingPassword.feature	0.65957445	62	32
 
 Feature	elements
-file:resources/features/Pages.feature	78
-file:resources/features/authorization.feature	40
-file:resources/features/registration.feature	89
-file:resources/features/viewfeed.feature	0
-file:resources/features/viewsinglefeed.feature	0
+file:resources/cucumber-features/01-authentication.feature	87
+file:resources/cucumber-features/04-apps.feature	91
+file:resources/cucumber-features/05-closingSessions.feature	52
+file:resources/cucumber-features/06-deletingUser.feature	14
+file:resources/cucumber-features/07-updatePassword.feature	24
+file:resources/cucumber-features/08-deletingApps.feature	36
+file:resources/cucumber-features/09-resettingPassword.feature	119
+file:resources/cucumber-features/10-validation.feature	94
