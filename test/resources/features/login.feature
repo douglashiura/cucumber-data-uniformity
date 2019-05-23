@@ -1,84 +1,22 @@
-Feature: Logging In
-  In order to use the system
-  As a user
-  I want to login
+#done
+
+Feature: Log in to RiskGap Website
 
   Background:
-    Given I have the usual roles
-    And I have a user "admin@intersect.org.au"
-    And "admin@intersect.org.au" has role "Administrator"
 
-  Scenario: Successful login
-    Given I am on the login page
-    When I fill in "Email" with "admin@intersect.org.au"
-    And I fill in "Password" with "Pas$w0rd"
-    And I press "Log in"
-    Then I should see "Logged in successfully."
-    And I should be on the home page
+    Given I am on the "http://riskgap.ru/" homepage
+    When I click the link "ВОЙТИ В СЕРВИС"
+    Then I wait for 3 seconds
+    Then I should see "Вам необходимо войти в систему или зарегистрироваться."
 
-  Scenario: Successful login from home page
-    Given I am on the home page
-    When I fill in "Email" with "admin@intersect.org.au"
-    And I fill in "Password" with "Pas$w0rd"
-    And I press "Log in"
-    Then I should see "Logged in successfully."
-    And I should be on the home page
+  Scenario Outline: Log in with correct (spelling) email and password
 
-  Scenario: Should be redirected to the login page when trying to access a secure page
-    Given I am on the list users page
-    Then I should see "You need to log in before continuing."
-    And I should be on the login page
+    Then I enter "<email>" into "user_email" field
+      And I enter "<password>" into "user_password" field
+      And I "<check>" a checkbox "Запомнить меня"
+    When I click the button "Войти"
+    Then I should see "<result>"
 
-  Scenario: Should be redirected to requested page after logging in following a redirect from a secure page
-    Given I am on the list users page
-    When I fill in "Email" with "admin@intersect.org.au"
-    And I fill in "Password" with "Pas$w0rd"
-    And I press "Log in"
-    Then I should see "Logged in successfully."
-    And I should be on the list users page
-
-  Scenario Outline: Failed logins due to missing/invalid details
-    Given I am on the login page
-    When I fill in "Email" with "<email>"
-    And I fill in "Password" with "<password>"
-    And I press "Log in"
-    Then I should see "Invalid email or password."
-    And I should be on the login page
-  Examples:
-    | email                  | password | explanation      |
-    |                        |          | nothing          |
-    |                        | Pas$w0rd | missing email    |
-    | admin@intersect.org.au |          | missing password |
-    | fred@intersect.org.au  | Pas$w0rd | invalid email    |
-    | admin@intersect.org.au | blah     | wrong password   |
-
-  Scenario Outline: Logging in as a deactivated / pending approval / rejected as spam with correct password
-    Given I have a deactivated user "deact@intersect.org.au"
-    And I have a rejected as spam user "spammer@intersect.org.au"
-    And I have a pending approval user "pending@intersect.org.au"
-    And I am on the login page
-    When I fill in "Email" with "<email>"
-    And I fill in "Password" with "<password>"
-    And I press "Log in"
-    Then I should see "Your account is not active."
-  Examples:
-    | email                    | password |
-    | deact@intersect.org.au   | Pas$w0rd |
-    | spammer@intersect.org.au | Pas$w0rd |
-    | pending@intersect.org.au | Pas$w0rd |
-
-  Scenario Outline: Logging in as a deactivated / pending approval / rejected as spam / with incorrect password should not reveal if user exists
-    Given I have a deactivated user "deact@intersect.org.au"
-    And I have a rejected as spam user "spammer@intersect.org.au"
-    And I have a pending approval user "pending@intersect.org.au"
-    And I am on the login page
-    When I fill in "Email" with "<email>"
-    And I fill in "Password" with "<password>"
-    And I press "Log in"
-    Then I should see "Invalid email or password."
-    And I should not see "Your account is not active."
-  Examples:
-    | email                    | password |
-    | deact@intersect.org.au   | pa       |
-    | spammer@intersect.org.au | pa       |
-    | pending@intersect.org.au | pa       |
+    Examples:
+      | email                    | password | check | result                   |
+      | temp.test.risk@yandex.ru | 99999999 | true  | Вход в систему выполнен. |

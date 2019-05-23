@@ -1,22 +1,12 @@
-Feature: Logging Out
-  In order to keep the system secure
-  As a user
-  I want to logout
+#done
 
-  Background:
-    Given I have a user "admin@intersect.org.au"
-    And I am on the login page
-    And I am logged in as "admin@intersect.org.au"
-    And I should see "Logged in successfully."
+Feature: Log out from RiskGap Website
 
-  Scenario: Successful logout
-    Given I am on the home page
-    When I follow "Sign out"
-    Then I should see "Logged out successfully."
-
-  Scenario: Logged out user can't access secure pages
-    Given I am on the list users page
-    And I follow "Sign out"
-    When I am on the list users page
-    Then I should be on the login page
-    And I should see "You need to log in before continuing."
+  Scenario Outline: Log out
+    Given I am "true" logged in RiskGap Website with email "<email>" and password "<password>"
+    When I click the link "<name>"
+    And I click the link "Выйти"
+    Then I should see "<text>"
+    Examples:
+      | email                    | password | name   | text |
+      | temp.test.risk@yandex.ru | 99999999 | Anton  | Вам необходимо войти в систему или зарегистрироваться. |
